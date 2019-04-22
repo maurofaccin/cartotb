@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Carto TB</title>
-    <link>https://maurofaccin/github.io/cartotb/en/</link>
+    <link>https://maurofaccin.github.io/cartotb/en/</link>
     <description>Recent content on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Thu, 11 Apr 2019 10:35:50 +0200</lastBuildDate>
     
-	<atom:link href="https://maurofaccin/github.io/cartotb/en/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://maurofaccin.github.io/cartotb/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Belgium</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/bel/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/bel/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/bel/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/bel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Burundi</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/bdi/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/bdi/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/bdi/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/bdi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kwilu</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/kwilu/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/kwilu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/kwilu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/kwilu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maniema</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/maniema/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/maniema/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/maniema/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/maniema/</guid>
       <description></description>
     </item>
     
     <item>
       <title>North Kivu</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/nkivu/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/nkivu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/nkivu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/nkivu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rwanda</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/rwa/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/rwa/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/rwa/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/rwa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>South Kivu</title>
-      <link>https://maurofaccin/github.io/cartotb/en/region/skivu/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/region/skivu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/region/skivu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/region/skivu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Carto TB</title>
-      <link>https://maurofaccin/github.io/cartotb/en/about/</link>
+      <link>https://maurofaccin.github.io/cartotb/en/about/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/en/about/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/en/about/</guid>
       <description>This is a work in progress.
 The World Health Organization (WHO) estimates that a significant proportion of tuberculosis (TB) patients do not have access to diagnostic testing and treatment. This proportion of undiagnosed patients, which can account for more than half of tuberculosis cases in some parts of the world, contributes significantly to TB-related mortality and spread.
 For this reason, WHO recommends that active TB screening activities be carried out in high-risk populations.</description>

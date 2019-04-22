@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Régions on Carto TB</title>
-    <link>https://maurofaccin/github.io/cartotb/fr/region/</link>
+    <link>https://maurofaccin.github.io/cartotb/fr/region/</link>
     <description>Recent content in Régions on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Mar 2019 12:00:00 -0500</lastBuildDate>
     
-	<atom:link href="https://maurofaccin/github.io/cartotb/fr/region/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://maurofaccin.github.io/cartotb/fr/region/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Belgique</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/bel/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/bel/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/bel/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/bel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Burundi</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/bdi/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/bdi/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/bdi/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/bdi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kwilu</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/kwilu/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/kwilu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/kwilu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/kwilu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maniema</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/maniema/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/maniema/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/maniema/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/maniema/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nord Kivu</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/nkivu/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/nkivu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rwanda</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/rwa/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/rwa/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/rwa/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/rwa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sud Kivu</title>
-      <link>https://maurofaccin/github.io/cartotb/fr/region/skivu/</link>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/skivu/</link>
       <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
       
-      <guid>https://maurofaccin/github.io/cartotb/fr/region/skivu/</guid>
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/skivu/</guid>
       <description></description>
     </item>
     

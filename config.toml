@@ -1,4 +1,4 @@
-baseURL = "https://maurofaccin/github.io/cartotb"
+baseURL = "https://maurofaccin.github.io/cartotb"
 title = "Carto TB"
 relativeURLs = "true"
 canonifyurls = true
