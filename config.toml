@@ -1,0 +1,51 @@
+baseURL = "https://maurofaccin/github.io/cartotb"
+title = "Carto TB"
+relativeURLs = "true"
+canonifyurls = true
+
+theme = "ananke"
+MetaDataFormat = "yaml"
+SectionPagesMenu = "main"
+
+DefaultContentLanguage = "en"
+languageCode = "en-us"
+Paginate = 12
+enableRobotsTXT = true
+defaultContentLanguageInSubdir = true
+
+publishDir = "docs"
+
+[params]
+  favicon = 'images/cartotb.ico'
+  description = "Cartography for Tuberculosis"
+  facebook = ""
+  twitter = ""
+  instagram = ""
+  youtube = ""
+  github = ""
+  gitlab = ""
+  linkedin = ""
+  mastodon = ""
+  background_color_class = "bg-black"
+  featured_image = "/images/default-feat-image.jpg"
+  recent_posts_number = 2
+
+[languages]
+  [languages.fr]
+    weight = 1
+    languageName = "Française"
+  [languages.en]
+    weight = 2
+    copyright = "Everything is mine"
+    languageName = "English"
+
+[[languages.en.menu.main]]
+  name = "About"
+  identifier = "about"
+  url = "/en/about/"
+  weight = 110
+[[languages.fr.menu.main]]
+  name = "Informations"
+  identifier = "about"
+  url = "/fr/about/"
+  weight = 110
