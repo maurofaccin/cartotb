@@ -11,7 +11,8 @@ This is a work in progress.
 Incidence refers to the values estimated by our approach.
 *</small>
 
-<script type="text/javascript" src="../tbassets/leaflet.js"></script>
+<!-- <script type="text/javascript" src="../tbassets/leaflet.js"></script> -->
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 <script type="text/javascript" src="countries.js"></script>
 <script type="text/javascript" src="../tbassets/map_front.js"></script>
 
