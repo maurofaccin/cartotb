@@ -12,7 +12,7 @@ Incidence refers to the values estimated by our approach.
 *</small>
 
 <script type="text/javascript" src="../tbassets/leaflet.js"></script>
-<script type="text/javascript" src="../data/countries.js"></script>
+<script type="text/javascript" src="countries.js"></script>
 <script type="text/javascript" src="../tbassets/map_front.js"></script>
 
 Thanks to a research fund granted by the Brussels Region in Belgium ([Innoviris](https://www.innoviris.be)), a consortium of Universities ([UCLouvain](https://uclouvain.be/) and [KULeuven](https://www.kuleuven.be)) and a start-up active in the development of innovative tools for international health ([Savics](http://www.savics/org)) are developing innovative solutions to help:

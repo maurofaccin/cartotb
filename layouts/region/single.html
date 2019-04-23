@@ -23,13 +23,11 @@
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-100">
         <div id="mapid" class='w-100 center' style="height: 95vh;"></div>
+
         <script type="text/javascript" src="/tbassets/leaflet.js"></script>
-        <script type="text/javascript">
-            var datasource = "{{ .Params.datasource }}";
-        </script>
-        <script type="text/javascript" src="{{ .Params.datasource }}/map_data.js"></script>
-        <script type="text/javascript" src="{{ .Params.datasource }}/data.js"></script>
-        <script type="text/javascript" src="/tbassets/map.js"></script>
+
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="map.js"></script>
 
         {{- .Content -}}
     </section>
