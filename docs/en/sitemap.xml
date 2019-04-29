@@ -33,6 +33,21 @@
   </url>
   
   <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/"
+                />
+  </url>
+  
+  <url>
     <loc>https://maurofaccin.github.io/cartotb/en/region/kwilu/</loc>
     <lastmod>2019-04-11T10:35:50+02:00</lastmod>
     <xhtml:link
@@ -108,62 +123,18 @@
   </url>
   
   <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/about/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/region/</loc>
-    <lastmod>2019-03-02T12:00:00-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/region/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/region/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/</loc>
+    <loc>https://maurofaccin.github.io/cartotb/en/tags/</loc>
     <lastmod>2019-04-11T10:35:50+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/categories/"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/categories/"
+                href="https://maurofaccin.github.io/cartotb/en/tags/"
                 />
   </url>
   
@@ -200,18 +171,47 @@
   </url>
   
   <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/tags/</loc>
-    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://maurofaccin.github.io/cartotb/en/about/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/tags/"
+                href="https://maurofaccin.github.io/cartotb/fr/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/tags/"
+                href="https://maurofaccin.github.io/cartotb/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/</loc>
+    <lastmod>2019-03-02T12:00:00-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/categories/"
                 />
   </url>
   
