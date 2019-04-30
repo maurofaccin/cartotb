@@ -13,7 +13,7 @@ description: 'Cartographie des zones à très haut risque de tuberculose'
 </small>
 
 <script type="text/javascript" src="../tbassets/leaflet.js"></script>
-<script type="text/javascript" src="../data/countries.js"></script>
+<script type="text/javascript" src="countries.js"></script>
 <script type="text/javascript" src="../tbassets/map_front.js"></script>
 
 Grâce à un fond de recherche accordé par la Région Bruxelloise en Belgique ([Innoviris](https://www.innoviris.be)), un consortium d'Universités ([UCLouvain](https://uclouvain.be/) et [KULeuven](https://www.kuleuven.be)) et une start-up active dans le développement d'outils innovants pour la santé internationale ([Savics](http://www.savics/org)) développent des solutions innovantes permettant:
