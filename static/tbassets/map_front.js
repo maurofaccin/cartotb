@@ -22,42 +22,54 @@ function highlight(e) {
 }
 
 function resetHighlight(e) {
-  percLayer.resetStyle(e.target);
-  info.update()
+    percLayer.resetStyle(e.target);
+    info.update()
 }
 
 var info = L.control();
-
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'legend'); // create a div with a class "info"
     this.update();
     return this._div;
 };
-
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = (props ?
-    '<b>' + props.name + '</b><br />Incidence rate: ' + props.incidence + '<br><small>TB cases per 100k<small>':
-    'Country TB Incidence');
+        '<b>' + props.name + '</b><br />Incidence rate: ' + props.incidence + '<br><small>TB cases per 100k<small>':
+        'Country TB Incidence');
 };
-
 info.addTo(map);
 
-var percLayer = new L.GeoJSON(regions, {
-    style: function (feature) {
-        return {
-            color: 'white',
-            fillOpacity: 0.6,
-            fillColor: feature.properties.color,
-            opacity: 0.7,
-            weight: 2,
-        };
-    },
-  onEachFeature: function (feature, layer) {
-    layer.on({
-      click: function (layer) {window.open(feature.properties.url, '_blank')},
-      mouseover: highlight,
-      mouseout: resetHighlight
-    })
-  }
-}).addTo(map);
+function loadJSON(url, callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+loadJSON(dataUrl + '/countries.json', function(response) {
+    var regions = JSON.parse(response);
+    var percLayer = new L.GeoJSON(regions, {
+        style: function (feature) {
+            return {
+                color: 'white',
+                fillOpacity: 0.6,
+                fillColor: feature.properties.color,
+                opacity: 0.7,
+                weight: 2,
+            };
+        },
+        onEachFeature: function (feature, layer) {
+            layer.on({
+                click: function (layer) {window.open(feature.properties.url, '_blank')},
+                mouseover: highlight,
+                mouseout: resetHighlight
+            })
+        }
+    }).addTo(map);
+});
