@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="/tbassets/map.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
         <script type="text/javascript">
-          var dataUrl = "{{ .Site.BaseURL | safeJS }}/datatb/{{ path.Base .File.Dir | safeJS }}";
+            var dataUrl = "{{ .Site.BaseURL | safeJS }}/datatb/{{ with .File }}{{ path.Base .Dir | safeJS }}{{ end }}";
         </script>
 
         {{ block "favicon" . }}
