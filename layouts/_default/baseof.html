@@ -26,6 +26,7 @@
             var dataUrl = "{{ .Site.BaseURL | safeJS }}/datatb/{{ with .File }}{{ path.Base .Dir | safeJS }}{{ end }}";
         </script>
 
+
         {{ block "favicon" . }}
         {{ partialCached "site-favicon.html" . }}
         {{ end }}
