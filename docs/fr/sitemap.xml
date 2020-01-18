@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://maurofaccin.github.io/cartotb/fr/tags/drc/</loc>
-    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-11T10:35:50+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,51 @@
                 rel="alternate"
                 hreflang="fr"
                 href="https://maurofaccin.github.io/cartotb/fr/tags/drc/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/fr/region/lualaba/</loc>
+    <lastmod>2020-01-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/lualaba/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/lualaba/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/fr/tags/map/</loc>
+    <lastmod>2020-01-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/tags/map/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/map/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/fr/tags/</loc>
+    <lastmod>2020-01-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/"
                 />
   </url>
   
@@ -29,36 +74,6 @@
                 rel="alternate"
                 hreflang="fr"
                 href="https://maurofaccin.github.io/cartotb/fr/region/kcentral/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/fr/tags/map/</loc>
-    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/tags/map/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/tags/map/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/fr/tags/</loc>
-    <lastmod>2019-05-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/tags/"
                 />
   </url>
   

@@ -15,6 +15,11 @@ defaultContentLanguageInSubdir = true
 
 publishDir = "docs"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   favicon = 'images/cartotb.ico'
   description = "Cartography for Tuberculosis"

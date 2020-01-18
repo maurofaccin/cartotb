@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Tue, 21 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 10:35:50 +0200</lastBuildDate>
     
 	<atom:link href="https://maurofaccin.github.io/cartotb/en/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lualaba</title>
+      <link>https://maurofaccin.github.io/cartotb/en/region/lualaba/</link>
+      <pubDate>Sat, 11 Jan 2020 10:35:50 +0200</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/en/region/lualaba/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Kongo Central</title>
