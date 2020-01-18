@@ -1,4 +1,4 @@
-var map = L.map('mapid').setView([-3, 28], 6);
+var map = L.map('mapid').setView([-5, 28], 4);
 var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
@@ -22,7 +22,14 @@ function highlight(e) {
 }
 
 function resetHighlight(e) {
-    percLayer.resetStyle(e.target);
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 1,
+    });
+
+    percLayer.resetStyle();
+    // percLayer.resetStyle(e.target);
     info.update()
 }
 
@@ -61,7 +68,7 @@ loadJSON(dataUrl + '/countries.json', function(response) {
                 fillOpacity: 0.6,
                 fillColor: feature.properties.color,
                 opacity: 0.7,
-                weight: 2,
+                weight: 1,
             };
         },
         onEachFeature: function (feature, layer) {
