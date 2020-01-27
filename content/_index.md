@@ -9,7 +9,7 @@ description: 'Cartography of predicted tuberculosis in high burden settings'
 <div id="mapid" style="height: 40vh;"></div>
 <small>*Incidence refers to the values estimated by our approach.*</small>
 
-<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script type="text/javascript" src="../tbassets/map_front.js"></script>
 
 Thanks to a research fund granted by the Brussels Region in Belgium ([Innoviris](https://www.innoviris.be)), a consortium of Universities ([UCLouvain](https://uclouvain.be/) and [KULeuven](https://www.kuleuven.be)) and a start-up active in the development of innovative tools for international health ([Savics](http://www.savics/org)) are developing innovative solutions to help:
