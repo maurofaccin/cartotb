@@ -13,8 +13,7 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
                 integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
                 crossorigin=""></script>
-        <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" /> -->
-        <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script> -->
+        <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
 
         <style>
 body { margin:0; padding:0; }
@@ -60,19 +59,47 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
             var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
             // Overlay layers (TMS)
-            var lyr = L.tileLayer('./world-overlay/{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: "", minZoom: 0, maxZoom: 7});
+            var lyr = L.tileLayer('./world-overlay/{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: "", minZoom: 0, maxZoom: 6});
+
+            var pbfGroup = L.layerGroup();
+            var regions = ['cod_lualaba', 'cod_skivu', 'rwa', 'bel'];
+
+            function draw_incidence(region, index) {
+                var openmaptilesUrl = "./regions/" + region + "/{z}/{x}/{y}.pbf";
+                var openmaptilesAttribution = '<a href="https://openmaptiles.org/">&copy; OpenMapTiles</a>, MauroFaccin';
+                var vectorTileOptions = {
+                    rendererFactory: L.canvas.tile,
+                    attribution: openmaptilesAttribution,
+                    maxNativeZoom: 18,
+                    minZoom: 7,
+                    vectorTileLayerStyles: {
+                        'incidence': function(properties, zoom) {
+                            return {
+                                weight: properties['stroke-width'],
+                                color: properties.stroke,
+                                opacity: properties['stroke-opacity'],
+                                fill: true,
+                                fillColor: properties.fill,
+                                fillOpacity: properties['fill-opacity']
+                            }
+                        },
+                    },
+                    interactive: true,    // Make sure that this VectorGrid fires mouse/pointer events
+                };
+                var pbfLayer = L.vectorGrid.protobuf(openmaptilesUrl, vectorTileOptions).addTo(pbfGroup);
+            }
+            regions.forEach(draw_incidence);
 
             // Map
             var map = L.map('map', {
                 center: [0, 0],
                 zoom: 3,
                 minZoom: 0,
-                layers: [osm]
+                layers: [osm, lyr, pbfGroup]
             });
-            lyr.addTo(map);
 
-            var basemaps = {"OpenStreetMap": osm, "CartoDB Positron": cartodb, "Stamen Toner": toner, "Without background": white}
-            var overlaymaps = {"Layer": lyr}
+            var basemaps = {"OpenStreetMap": osm, "CartoDB Positron": cartodb, "Stamen Toner": toner, "Without background": white};
+            var overlaymaps = {"Layer": lyr, 'Vector': pbfGroup};
 
             // Title
             var title = L.control();
