@@ -44,6 +44,43 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
         <script>
             /* **** Leaflet **** */
+            var zoom1 = 7
+            var zoom2 = 13
+
+            // pull geojsons
+            function loadJSON(url, callback) {
+                var xobj = new XMLHttpRequest();
+                xobj.overrideMimeType("application/json");
+                xobj.open('GET', url, true); // Replace 'my_data' with the path to your file
+                xobj.onreadystatechange = function () {
+                    if (xobj.readyState == 4 && xobj.status == "200") {
+                        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                        callback(xobj.responseText);
+                    }
+                };
+                xobj.send(null);
+            }
+            function featStyle(feat, interactive=false) {
+                return {
+                    color: feat.properties.stroke,
+                    fillOpacity: feat.properties["fill-opacity"],
+                    fillColor: feat.properties.fill,
+                    opacity: feat.properties["stroke-opacity"],
+                    weight: feat.properties["stroke-width"],
+                    interactive: interactive,
+                };
+            };
+            function clickFeature(e) {
+                var layer = e.target;
+                map.fitBounds(layer.getBounds());
+                //console.log(layer.feature.properties.name); //country info from geojson
+            }
+
+            function onEachFeature(feature, layer) {
+                layer.on({
+                    click: clickFeature
+                });
+            }
 
             // Base layers
             //  .. OpenStreetMap
@@ -59,11 +96,12 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
             var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
             // Overlay layers (TMS)
-            var lyr = L.tileLayer('./world-overlay/{z}/{x}/{y}.png', {tms: true, opacity: 1, attribution: "", minZoom: 0, maxZoom: 7});
+            var lyr = L.tileLayer('./world-overlay/{z}/{x}/{y}.png', {tms: true, opacity: 1, attribution: "", minZoom: 0, maxZoom: zoom1});
 
             var pbfGroup = L.layerGroup();
             var cities = L.layerGroup();
             var regions = ['cod_lualaba', 'cod_skivu', 'rwa', 'bel'];
+            var cityBounds = L.layerGroup();
 
             function draw_incidence(region, index) {
                 var openmaptilesUrl = "./regions/" + region + "/{z}/{x}/{y}.pbf";
@@ -72,7 +110,8 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
                     rendererFactory: L.canvas.tile,
                     attribution: openmaptilesAttribution,
                     maxNativeZoom: 18,
-                    minZoom: 8,
+                    minZoom: zoom1 + 1,
+                    maxZoom: zoom2 - 1,
                     vectorTileLayerStyles: {
                         'incidence': function(properties, zoom) {
                             return {
@@ -90,7 +129,19 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
                 var pbfLayer = L.vectorGrid.protobuf(openmaptilesUrl, vectorTileOptions).addTo(pbfGroup);
 
                 // add the cities
-                var city = L.tileLayer('./cities/' + region + '/{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: "", minZoom: 13, maxZoom: 17}).addTo(cities);
+                var city = L.tileLayer('./cities/' + region + '/{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2, maxZoom: 17}).addTo(cities);
+
+                loadJSON('./cities/' + region + '/cities.geojson', function(response) {
+                    var bounds = JSON.parse(response);
+                    var citylayer = new L.GeoJSON(bounds, {
+                        style: function (feature) { return featStyle(feature, true) },
+                        onEachFeature: onEachFeature
+                    }).addTo(cityBounds);
+                    citylayer.on("click", function (event) {
+                        // Assuming the clicked feature is a shape, not a point marker.
+                        map.fitBounds(event.layer.getBounds());
+                    });
+                });
             }
             regions.forEach(draw_incidence);
 
@@ -134,6 +185,13 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
             // Add base layers
             L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
+            map.on('zoomend', function() {
+                if ((map.getZoom() < zoom2) & (map.getZoom() > zoom1)) {
+                    map.addLayer(cityBounds)
+                } else {
+                    map.removeLayer(cityBounds)
+                }
+            });
 
         </script>
 
