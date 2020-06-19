@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>CartoTB</title>
 
         <!-- Leaflet -->
@@ -44,6 +44,7 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
         <script>
             /* **** Leaflet **** */
+            var zoom0 = 3
             var zoom1 = 7
             var zoom2 = 13
 
@@ -51,7 +52,7 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
             function loadJSON(url, callback) {
                 var xobj = new XMLHttpRequest();
                 xobj.overrideMimeType("application/json");
-                xobj.open('GET', url, true); // Replace 'my_data' with the path to your file
+                xobj.open("GET", url, true); // Replace 'my_data' with the path to your file
                 xobj.onreadystatechange = function () {
                     if (xobj.readyState == 4 && xobj.status == "200") {
                         // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -62,9 +63,10 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
             }
             function featStyle(feat, interactive=false) {
                 return {
+                    fill: true,
                     color: feat.properties.stroke,
-                    fillOpacity: feat.properties["fill-opacity"],
                     fillColor: feat.properties.fill,
+                    fillOpacity: feat.properties["fill-opacity"],
                     opacity: feat.properties["stroke-opacity"],
                     weight: feat.properties["stroke-width"],
                     interactive: interactive,
@@ -84,10 +86,10 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
             // Base layers
             //  .. OpenStreetMap
-            var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 0});
+            var osm = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', minZoom: 0});
 
             //  .. CartoDB Positron
-            var cartodb = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', minZoom: 0});
+            var cartodb = L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', minZoom: 0});
 
             // .. Imagery
             var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'});
@@ -96,12 +98,21 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
             var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
             // Overlay layers (TMS)
-            var lyr = L.tileLayer('./world-overlay/{z}/{x}/{y}.png', {tms: true, opacity: 1, attribution: "", minZoom: 0, maxZoom: zoom1});
+            var lyr = L.tileLayer("./world-overlay/{z}/{x}/{y}.png", {tms: true, opacity: 1, attribution: "", minZoom: zoom0 + 1, maxZoom: zoom1});
 
             var pbfGroup = L.layerGroup();
             var cities = L.layerGroup();
-            var regions = ['cod_lualaba', 'cod_skivu', 'rwa', 'bel'];
+            var regions = ["cod_lualaba", "cod_skivu", "rwa", "bel"];
             var cityBounds = L.layerGroup();
+            var worldmap = L.layerGroup();
+
+            loadJSON("./world-overlay/world.geojson", function(response) {
+                var worldGeojson = JSON.parse(response);
+                var world = new L.GeoJSON(worldGeojson, {
+                    style: function (feature) { return featStyle(feature, true) },
+                    <!-- onEachFeature: onEachFeature -->
+                }).addTo(worldmap);
+            });
 
             function draw_incidence(region, index) {
                 var openmaptilesUrl = "./regions/" + region + "/{z}/{x}/{y}.pbf";
@@ -113,14 +124,14 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
                     minZoom: zoom1 + 1,
                     maxZoom: zoom2 - 1,
                     vectorTileLayerStyles: {
-                        'incidence': function(properties, zoom) {
+                        "incidence": function(properties, zoom) {
                             return {
-                                weight: properties['stroke-width'],
+                                weight: properties["stroke-width"],
                                 color: properties.stroke,
-                                opacity: properties['stroke-opacity'],
+                                opacity: properties["stroke-opacity"],
                                 fill: true,
                                 fillColor: properties.fill,
-                                fillOpacity: properties['fill-opacity']
+                                fillOpacity: properties["fill-opacity"]
                             }
                         },
                     },
@@ -129,38 +140,34 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
                 var pbfLayer = L.vectorGrid.protobuf(openmaptilesUrl, vectorTileOptions).addTo(pbfGroup);
 
                 // add the cities
-                var city = L.tileLayer('./cities/' + region + '/{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2, maxZoom: 17}).addTo(cities);
+                var city = L.tileLayer("./cities/" + region + "/{z}/{x}/{y}.png", {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2, maxZoom: 17}).addTo(cities);
 
-                loadJSON('./cities/' + region + '/cities.geojson', function(response) {
+                loadJSON("./cities/" + region + "/cities.geojson", function(response) {
                     var bounds = JSON.parse(response);
                     var citylayer = new L.GeoJSON(bounds, {
                         style: function (feature) { return featStyle(feature, true) },
                         onEachFeature: onEachFeature
                     }).addTo(cityBounds);
-                    citylayer.on("click", function (event) {
-                        // Assuming the clicked feature is a shape, not a point marker.
-                        map.fitBounds(event.layer.getBounds());
-                    });
                 });
             }
             regions.forEach(draw_incidence);
 
             // Map
-            var map = L.map('map', {
+            var map = L.map("map", {
                 center: [0, 0],
                 zoom: 3,
                 zoomDelta: 1,
                 minZoom: 0,
-                layers: [cartodb, lyr, pbfGroup, cities]
+                layers: [cartodb, worldmap, lyr, pbfGroup, cities]
             });
 
             var basemaps = {"CartoDB Positron": cartodb, "OpenStreetMap": osm, "Satellite": Esri_WorldImagery, "Without background": white};
-            var overlaymaps = {"Layer": lyr, 'Vector': pbfGroup, "Cities": cities};
+            var overlaymaps = {"Countries": worldmap, "Only pop": lyr, "Vector": pbfGroup, "Cities": cities};
 
             // Title
             var title = L.control();
             title.onAdd = function(map) {
-                this._div = L.DomUtil.create('div', 'ctl title');
+                this._div = L.DomUtil.create("div", "ctl title");
                 this.update();
                 return this._div;
             };
@@ -171,9 +178,9 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
             // Note
             var src = 'Generated by <a href="http://www.klokan.cz/projects/gdal2tiles/">GDAL2Tiles</a>, Copyright &copy; 2008 <a href="http://www.klokan.cz/">Klokan Petr Pridal</a>,  <a href="http://www.gdal.org/">GDAL</a> &amp; <a href="http://www.osgeo.org/">OSGeo</a> <a href="http://code.google.com/soc/">GSoC</a>';
-            var title = L.control({position: 'bottomleft'});
+            var title = L.control({position: "bottomleft"});
             title.onAdd = function(map) {
-                this._div = L.DomUtil.create('div', 'ctl src');
+                this._div = L.DomUtil.create("div", "ctl src");
                 this.update();
                 return this._div;
             };
@@ -185,11 +192,17 @@ body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet
 
             // Add base layers
             L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
-            map.on('zoomend', function() {
-                if ((map.getZoom() < zoom2) & (map.getZoom() > zoom1)) {
-                    map.addLayer(cityBounds)
+            map.on("zoomend", function() {
+                var zoom = map.getZoom()
+                if (zoom <= zoom0) {
+                    map.addLayer(worldmap);
+                } else if (zoom <= zoom1) {
+                    map.removeLayer(cityBounds);
+                    map.removeLayer(worldmap);
+                } else if (zoom < zoom2) {
+                    map.addLayer(cityBounds);
                 } else {
-                    map.removeLayer(cityBounds)
+                    map.removeLayer(cityBounds);
                 }
             });
 
