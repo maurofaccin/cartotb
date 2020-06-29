@@ -213,4 +213,4 @@ map.on("zoomend", function() {
     }
 });
 
-L.control.zoom({position: "bottomleft"}).addTo(map);
+L.control.zoom({position: "topleft"}).addTo(map);
