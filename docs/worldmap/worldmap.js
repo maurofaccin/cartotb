@@ -73,11 +73,11 @@ function toggleCaption(e) {
         caption.appendChild(textP);
         div.appendChild(caption);
     }
-};
+}
 
-function removeCaption(e) {
+function removeCaption() {
     var content = document.getElementById("legend-content");
-    content.remove();
+    if (content) {content.remove();}
 }
 
 // Base layers
@@ -184,7 +184,6 @@ var legends = {
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'legend');
-    // div.innerHTML = '<strong><code>LEGEND</code></strong>';
     var legTitle = document.createElement('H3');
     legTitle.appendChild(document.createTextNode('LEGEND'));
     legTitle.style.margin=0;
@@ -200,16 +199,17 @@ legend.addTo(map);
 // Add base layers
 L.control.layers(basemaps, overlaymaps, {collapsed: true, position: 'topleft'}).addTo(map);
 map.on("zoomend", function() {
-    var zoom = map.getZoom()
+    var zoom = this.getZoom();
+    removeCaption();
     if (zoom <= zoom0) {
-        map.addLayer(worldmap);
+        this.addLayer(worldmap);
     } else if (zoom <= zoom1) {
-        map.removeLayer(cityBounds);
-        map.removeLayer(worldmap);
+        this.removeLayer(cityBounds);
+        this.removeLayer(worldmap);
     } else if (zoom < zoom2) {
-        map.addLayer(cityBounds);
+        this.addLayer(cityBounds);
     } else {
-        map.removeLayer(cityBounds);
+        this.removeLayer(cityBounds);
     }
 });
 
