@@ -195,13 +195,6 @@
             title.addTo(map);
 
             // Legend
-            function legendEntry(code, text, opacity=0.8) {
-                var entry = document.createElement("I");
-                entry.style.backgroundColor = cmap[code];
-                entry.style.opacity = opacity;
-                return entry
-                return '<i style="background:' + cmap[code] + '; opacity:' + opacity + '"></i> >' + text + '<br>';
-            }
             var cmap = {"col-0": "#ffffcc", "col-1": "#fff3af", "col-2": "#ffe793", "col-3": "#fed976", "col-4": "#febf5a", "col-5": "#fea647", "col-6": "#fd8c3c", "col-7": "#fc6330", "col-8": "#f43d25", "col-9": "#e2191c", "col-10": "#c90823", "col-11": "#a80026", "col-12": "#800026"}
             var legends = {
                 "zoom0": [["col-0", "0"], ["col-6", "0.3%"], ["col-9", "1%"]],
