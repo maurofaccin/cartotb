@@ -94,7 +94,7 @@ var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
 var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
 // Overlay layers (TMS)
-var lyr = L.tileLayer("./world-overlay/{z}/{x}/{y}.png", {tms: true, opacity: 1, attribution: "", minZoom: zoom0 + 1, maxZoom: zoom1});
+var lyr = L.tileLayer("./world-overlay/{z}/{x}/{y}.png", {tms: true, opacity: 1, attribution: "", minZoom: zoom0, maxZoom: zoom1});
 
 var pbfGroup = L.layerGroup();
 var cities = L.layerGroup();
@@ -116,8 +116,8 @@ function draw_incidence(region, index) {
         rendererFactory: L.canvas.tile,
         attribution: openmaptilesAttribution,
         maxNativeZoom: 18,
-        minZoom: zoom1 + 1,
-        maxZoom: zoom2 - 1,
+        minZoom: zoom1,
+        maxZoom: zoom2,
         vectorTileLayerStyles: {
             "incidence": function(properties, zoom) {
                 return {
@@ -147,13 +147,20 @@ function draw_incidence(region, index) {
 }
 regions.forEach(draw_incidence);
 
+var minzoom = Math.max(
+    Math.log2(window.screen.height / 256),
+    Math.log2(window.screen.width / 256)
+);
+
 // Map
 var map = L.map("map", {
     center: [0, 0],
-    zoom: 3,
+    zoomSnap:0,
     zoomDelta: 1,
-    minZoom: 0,
+    zoom: minzoom,
+    minZoom: minzoom,
     zoomControl: false,
+    maxBounds: [[-80, -180], [80, 180]],
     layers: [cartodb, worldmap, lyr, pbfGroup, cities]
 });
 
