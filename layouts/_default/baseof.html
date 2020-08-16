@@ -20,6 +20,7 @@
             <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
         {{ end }}
 
+        {{ block "head" . }}{{ end }}
         <link rel="stylesheet" href="/tbassets/map.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <script type="text/javascript">
@@ -30,22 +31,12 @@
         {{ block "favicon" . }}
         {{ partialCached "site-favicon.html" . }}
         {{ end }}
-
-        {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
-        {{- template "_internal/opengraph.html" . -}}
-        {{- template "_internal/google_news.html" . -}}
-        {{- template "_internal/schema.html" . -}}
-        {{- template "_internal/twitter_cards.html" . -}}
-
-        {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-        {{ template "_internal/google_analytics_async.html" . }}
-        {{ end }}
     </head>
 
     <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
 
         {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
-        <main class="pb7" role="main">
+        <main class="pb7">
             {{ block "main" . }}{{ end }}
         </main>
         {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}

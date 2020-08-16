@@ -241,4 +241,18 @@
                 />
   </url>
   
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/worldmap/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/worldmap/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/worldmap/"
+                />
+  </url>
+  
 </urlset>

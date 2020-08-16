@@ -8,9 +8,9 @@ description: 'Cartographie des zones à très haut risque de tuberculose'
 *Il s'agit d'un travail en cours.*
 
 <div id="mapid" style="height: 40vh;"></div>
-<small>
-*L'incidence fait référence aux valeurs estimées par notre approche.*
-</small>
+<small><i>
+Cliquez sur la carte pour ouvrir une vue plus grande.
+</i></small>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script type="text/javascript" src="../tbassets/map_front.js"></script>

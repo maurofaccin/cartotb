@@ -94,7 +94,7 @@ var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
 var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
 // Overlay layers (TMS)
-var lyr = L.tileLayer("./world-overlay/{z}/{x}/{y}.png", {tms: true, opacity: 1, attribution: "", minZoom: zoom0, maxZoom: zoom1});
+var lyr = L.tileLayer("/cartotb/worldmap/world-overlay/{z}/{x}/{y}.png", {tms: true, opacity: 1, attribution: "", minZoom: zoom0, maxZoom: zoom1});
 
 var pbfGroup = L.layerGroup();
 var cities = L.layerGroup();
@@ -102,7 +102,7 @@ var regions = ["cod_lualaba", "cod_skivu", "rwa", "bel"];
 var cityBounds = L.layerGroup();
 var worldmap = L.layerGroup();
 
-loadJSON("./world-overlay/world.geojson", function(response) {
+loadJSON("/cartotb/worldmap/world-overlay/world.geojson", function(response) {
     var worldGeojson = JSON.parse(response);
     var world = new L.GeoJSON(worldGeojson, {
         style: function (feature) { return featStyle(feature, true) },
@@ -110,7 +110,7 @@ loadJSON("./world-overlay/world.geojson", function(response) {
 });
 
 function draw_incidence(region, index) {
-    var openmaptilesUrl = "./regions/" + region + "/{z}/{x}/{y}.pbf";
+    var openmaptilesUrl = "/cartotb/worldmap/regions/" + region + "/{z}/{x}/{y}.pbf";
     var openmaptilesAttribution = '<a href="https://openmaptiles.org/">&copy; OpenMapTiles</a>, <a href="https://maurofaccin.github.io">MauroFaccin</a>';
     var vectorTileOptions = {
         rendererFactory: L.canvas.tile,
@@ -135,9 +135,9 @@ function draw_incidence(region, index) {
     var pbfLayer = L.vectorGrid.protobuf(openmaptilesUrl, vectorTileOptions).addTo(pbfGroup);
 
     // add the cities
-    var city = L.tileLayer("./cities/" + region + "/{z}/{x}/{y}.png", {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2, maxZoom: 17}).addTo(cities);
+    var city = L.tileLayer("/cartotb/worldmap/cities/" + region + "/{z}/{x}/{y}.png", {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2 - 0.9, maxZoom: 17}).addTo(cities);
 
-    loadJSON("./cities/" + region + "/cities.geojson", function(response) {
+    loadJSON("/cartotb/worldmap/cities/" + region + "/cities.geojson", function(response) {
         var bounds = JSON.parse(response);
         var citylayer = new L.GeoJSON(bounds, {
             style: function (feature) { return featStyle(feature, true) },
@@ -221,3 +221,15 @@ map.on("zoomend", function() {
 });
 
 L.control.zoom({position: "topleft"}).addTo(map);
+
+// Get the modal
+var modal = document.getElementById("modal");
+
+function hideModal () {
+  modal.style.display = "none";
+    console.log('modal hidden');
+
+}
+// When the user clicks on <span> (x), close the modal
+modal.onclick = hideModal
+
