@@ -5,7 +5,7 @@ canonifyurls = true
 
 theme = "ananke"
 MetaDataFormat = "yaml"
-SectionPagesMenu = "main"
+# SectionPagesMenu = "main"
 
 DefaultContentLanguage = "en"
 languageCode = "en-us"
