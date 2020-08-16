@@ -67,3 +67,15 @@ body, table, tr, td, th, div, h1, h2, h3, input { font-family: "Calibri", "Trebu
   margin: auto;
   padding: 1em 2em;
 }
+
+@media screen and (max-width: 1000px) {
+    .inner-modal {
+      width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inner-modal {
+      width: 100%;
+    }
+}
