@@ -98,7 +98,7 @@ var lyr = L.tileLayer("/cartotb/worldmap/world-overlay/{z}/{x}/{y}.png", {tms: t
 
 var pbfGroup = L.layerGroup();
 var cities = L.layerGroup();
-var regions = ["cod_lualaba", "cod_skivu", "rwa", "bel"];
+var regions = ["cod_lualaba", "cod_skivu", "cod_nkivu", "rwa", "bel"];
 var cityBounds = L.layerGroup();
 var worldmap = L.layerGroup();
 
