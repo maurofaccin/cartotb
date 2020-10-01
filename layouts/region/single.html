@@ -4,7 +4,11 @@
 {{ end }}
 
 {{ define "main" }}
-
+<script>
+    var mapzoom = {{ .Params.zoom | default 8 }};
+    var mapcenter = {{ .Params.center }};
+    var mapcode = {{ .File.TranslationBaseName }};
+</script>
 {{ $section := .Site.GetPage "section" .Section }}
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
