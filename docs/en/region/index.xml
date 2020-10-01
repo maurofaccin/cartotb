@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regions on Carto TB</title>
+    <link>https://maurofaccin.github.io/cartotb/en/region/</link>
+    <description>Recent content in Regions on Carto TB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Everything is mine</copyright>
+    <lastBuildDate>Thu, 11 Apr 2019 10:35:50 +0200</lastBuildDate><atom:link href="https://maurofaccin.github.io/cartotb/en/region/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>North Kivu</title>
+      <link>https://maurofaccin.github.io/cartotb/en/region/nkivu/</link>
+      <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/en/region/nkivu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>North Kivu (DRC)</title>
+      <link>https://maurofaccin.github.io/cartotb/en/region/cod_nkivu/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/en/region/cod_nkivu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rwanda</title>
+      <link>https://maurofaccin.github.io/cartotb/en/region/rwa/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/en/region/rwa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>South Kivu (DRC)</title>
+      <link>https://maurofaccin.github.io/cartotb/en/region/cod_skivu/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/en/region/cod_skivu/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
