@@ -6,10 +6,15 @@
     <description>Recent content on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://maurofaccin.github.io/cartotb/fr/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://maurofaccin.github.io/cartotb/fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nord Kivu</title>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</link>
+      <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Carto TB</title>
@@ -20,6 +25,33 @@
       <description>Il s&amp;rsquo;agit d&amp;rsquo;un travail en cours.
 L’Organisation Mondiale de la Santé (OMS) estime qu’une partie importante des malades atteints de la tuberculose (TB) n’ont pas accès à un test diagnostic et au traitement. Cette proportion de malades non-diagnostiqués, qui peut atteindre plus de la moitié des cas de tuberculose dans certaines parties du monde, contribue largement à la mortalité liée à la TB et à sa propagation.
 Pour cette raison, l’OMS recommande de réaliser des activités de dépistage actif de la TB dans les populations à haut risque.</description>
+    </item>
+    
+    <item>
+      <title>Nord Kivu (DRC)</title>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/cod_nkivu/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/cod_nkivu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rwanda</title>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/rwa/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/rwa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sud Kivu (DRC)</title>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/cod_skivu/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/cod_skivu/</guid>
+      <description></description>
     </item>
     
   </channel>

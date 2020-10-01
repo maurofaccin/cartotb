@@ -26,6 +26,7 @@ function featStyle(feat, interactive=false) {
         interactive: interactive,
     };
 };
+
 function clickFeature(e) {
     var layer = e.target;
     map.fitBounds(layer.getBounds());

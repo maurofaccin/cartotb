@@ -6,10 +6,6 @@
     <description>Recent content in Categories on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Everything is mine</copyright>
-    
-	<atom:link href="https://maurofaccin.github.io/cartotb/en/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>Everything is mine</copyright><atom:link href="https://maurofaccin.github.io/cartotb/en/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -5,10 +5,6 @@
     <link>https://maurofaccin.github.io/cartotb/fr/worldmap/</link>
     <description>Recent content in World map on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://maurofaccin.github.io/cartotb/fr/worldmap/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://maurofaccin.github.io/cartotb/fr/worldmap/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

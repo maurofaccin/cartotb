@@ -3,6 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/tags/drc/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/drc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/tags/drc/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/tags/map/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/map/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/tags/map/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/nkivu/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/nkivu/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/nkivu/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/tags/</loc>
+    <lastmod>2019-04-11T10:35:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://maurofaccin.github.io/cartotb/en/about/</loc>
     <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -18,16 +108,47 @@
   </url>
   
   <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/</loc>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/cod_nkivu/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/"
+                href="https://maurofaccin.github.io/cartotb/fr/region/cod_nkivu/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/"
+                href="https://maurofaccin.github.io/cartotb/en/region/cod_nkivu/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/rwa/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/rwa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/rwa/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maurofaccin.github.io/cartotb/en/region/cod_skivu/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/cod_skivu/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/cod_skivu/"
                 />
   </url>
   
@@ -42,20 +163,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://maurofaccin.github.io/cartotb/en/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://maurofaccin.github.io/cartotb/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://maurofaccin.github.io/cartotb/fr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maurofaccin.github.io/cartotb/en/tags/"
                 />
   </url>
   
