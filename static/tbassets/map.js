@@ -12,14 +12,12 @@ var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
         maxZoom: 19
 }).addTo(map);
 
-var osm_hot = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
-});
+//  .. White background
+var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==", {minZoom: 0});
 
 var baseLayers = {
         "CartoDB Positron": CartoDB_Positron,
-        "OSM Hot": osm_hot,
+        "White background": white,
 };
 var control = L.control.layers(baseLayers, {}).addTo(map);
 
@@ -51,56 +49,56 @@ function loadJSON(url, callback) {
         xobj.send(null);
 }
 
-loadJSON(dataUrl + '/missions.json', function(response) {
-        var miss = JSON.parse(response);
+// loadJSON(dataUrl + '/missions.json', function(response) {
+//         var miss = JSON.parse(response);
 
-        var rectangles = new L.FeatureGroup();
-        for (var mname in miss){
-                var bounds = [[miss[mname]["bounds"][1], miss[mname]["bounds"][0]], [miss[mname]["bounds"][3], miss[mname]["bounds"][2]]];
-                L.imageOverlay(miss[mname]["pic"], bounds).addTo(map);
-                rec = new L.rectangle(bounds, {}).addTo(rectangles);
-                rec.on('click', function(e) {
-                        map.setView(e.latlng,  13);
-                }
-                );
-                map.on('zoomend', function(e) {
-                        if (map.getZoom() > 12){
-                                map.removeLayer(rectangles);
-                        }
-                        else {
-                                map.addLayer(rectangles);
-                        }
-                });
-        };
-        map.addLayer(rectangles);
-});
-
-// function featStyle(feat, interactive=false) {
-//         return {
-//                 color: feat.properties.stroke,
-//                 fillOpacity: feat.properties["fill-opacity"],
-//                 fillColor: feat.properties.fill,
-//                 opacity: feat.properties["stroke-opacity"],
-//                 weight: feat.properties["stroke-width"],
-//                 interactive: interactive,
+//         var rectangles = new L.FeatureGroup();
+//         for (var mname in miss){
+//                 var bounds = [[miss[mname]["bounds"][1], miss[mname]["bounds"][0]], [miss[mname]["bounds"][3], miss[mname]["bounds"][2]]];
+//                 L.imageOverlay(miss[mname]["pic"], bounds).addTo(map);
+//                 rec = new L.rectangle(bounds, {}).addTo(rectangles);
+//                 rec.on('click', function(e) {
+//                         map.setView(e.latlng,  13);
+//                 }
+//                 );
+//                 map.on('zoomend', function(e) {
+//                         if (map.getZoom() > 12){
+//                                 map.removeLayer(rectangles);
+//                         }
+//                         else {
+//                                 map.addLayer(rectangles);
+//                         }
+//                 });
 //         };
-// };
-
-// // var TBInclayer;
-// loadJSON(dataUrl + '/TBIncidence.json', function(response) {
-//         var TBIncidence = JSON.parse(response);
-//         TBInclayer = new L.GeoJSON(TBIncidence, {
-//                 style: function (feature) { return featStyle(feature) }
-//         }).addTo(map);
-//         // TBInclayer = L.vectorGrid.slicer(TBIncidence, {
-//         //     vectorTileLayerStyles: {
-//         //         sliced: {  },
-//         //         TBIncidence: function (feature) { return featStyle(feature) }
-//         //     }
-//         // }).addTo(map);
-//         TBInclayer.setZIndex(10);
-//         control.addOverlay(TBInclayer, 'TB Rate');
+//         map.addLayer(rectangles);
 // });
+
+function featStyle(feat, interactive=false) {
+        return {
+                color: feat.properties.stroke,
+                fillOpacity: feat.properties["fill-opacity"],
+                fillColor: feat.properties.fill,
+                opacity: feat.properties["stroke-opacity"],
+                weight: feat.properties["stroke-width"],
+                interactive: interactive,
+        };
+};
+
+// var TBInclayer;
+loadJSON(dataUrl + '/TBIncidence.json', function(response) {
+        var TBIncidence = JSON.parse(response);
+        TBInclayer = new L.GeoJSON(TBIncidence, {
+                style: function (feature) { return featStyle(feature) }
+        }).addTo(map);
+        // TBInclayer = L.vectorGrid.slicer(TBIncidence, {
+        //     vectorTileLayerStyles: {
+        //         sliced: {  },
+        //         TBIncidence: function (feature) { return featStyle(feature) }
+        //     }
+        // }).addTo(map);
+        TBInclayer.setZIndex(10);
+        control.addOverlay(TBInclayer, 'TB Rate');
+});
 
 // loadJSON(dataUrl + '/TBIncidenceAbs.json', function(response) {
 //         var TBIncidenceAbs = JSON.parse(response);
