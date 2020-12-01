@@ -8,7 +8,7 @@
 "bounds": "21.791950,-11.193740,27.064400,-7.696790",
 "type": "overlay",
 "format": "pbf",
-"generator": "tippecanoe v1.35.0",
+"generator": "tippecanoe v1.36.0",
 "generator_options": "tippecanoe '--maximum-zoom=12' --drop-densest-as-needed --extend-zooms-if-still-dropping '--name=incidence' '--layer=incidence' --output-to-directory /home/mauro/codes/cartotb/static/worldmap/regions/cod_lualaba --no-tile-compression --force ../cache/cases_dist/cod_lualaba/inc.geojson",
 "json": "{\"vector_layers\": [ { \"id\": \"incidence\", \"description\": \"\", \"minzoom\": 0, \"maxzoom\": 12, \"fields\": {\"fill\": \"String\", \"fill-opacity\": \"Number\", \"stroke\": \"String\", \"stroke-opacity\": \"Number\", \"stroke-width\": \"Number\", \"title\": \"String\"} } ],\"tilestats\": {\"layerCount\": 1,\"layers\": [{\"layer\": \"incidence\",\"count\": 4,\"geometry\": \"Polygon\",\"attributeCount\": 6,\"attributes\": [{\"attribute\": \"fill\",\"count\": 4,\"type\": \"string\",\"values\": [\"#800026\",\"#f43d25\",\"#febf5a\",\"#ffffcc\"]},{\"attribute\": \"fill-opacity\",\"count\": 4,\"type\": \"number\",\"values\": [0.4,0.5333333333333333,0.6666666666666667,0.8],\"min\": 0.4,\"max\": 0.8},{\"attribute\": \"stroke\",\"count\": 4,\"type\": \"string\",\"values\": [\"#800026\",\"#f43d25\",\"#febf5a\",\"#ffffcc\"]},{\"attribute\": \"stroke-opacity\",\"count\": 1,\"type\": \"number\",\"values\": [0.5],\"min\": 0.5,\"max\": 0.5},{\"attribute\": \"stroke-width\",\"count\": 1,\"type\": \"number\",\"values\": [1],\"min\": 1,\"max\": 1},{\"attribute\": \"title\",\"count\": 4,\"type\": \"string\",\"values\": [\">0.1%\",\">0.3%\",\">0.5%\",\">1e+00%\"]}]}]}}"
 }

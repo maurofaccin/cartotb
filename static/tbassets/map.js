@@ -21,7 +21,7 @@ var baseLayers = {
 };
 var control = L.control.layers(baseLayers, {}).addTo(map);
 
-L.vectorGrid.protobuf("/cartotb/worldmap/regions/" + mapcode + "/{z}/{x}/{y}.pbf", {
+inc_layer = L.vectorGrid.protobuf("/cartotb/worldmap/regions/" + mapcode + "/{z}/{x}/{y}.pbf", {
         vectorTileLayerStyles: {
                 incidence: function(properties, zoom){
                         return {
@@ -35,6 +35,7 @@ L.vectorGrid.protobuf("/cartotb/worldmap/regions/" + mapcode + "/{z}/{x}/{y}.pbf
                 }
         },
 }).addTo(map);
+inc_layer.setZIndex(20);
 
 function loadJSON(url, callback) {
         var xobj = new XMLHttpRequest();
@@ -90,14 +91,21 @@ loadJSON(dataUrl + '/TBIncidence.json', function(response) {
         TBInclayer = new L.GeoJSON(TBIncidence, {
                 style: function (feature) { return featStyle(feature) }
         }).addTo(map);
-        // TBInclayer = L.vectorGrid.slicer(TBIncidence, {
-        //     vectorTileLayerStyles: {
-        //         sliced: {  },
-        //         TBIncidence: function (feature) { return featStyle(feature) }
-        //     }
-        // }).addTo(map);
-        TBInclayer.setZIndex(10);
+        // TBInclayer.setZIndex(10);
         control.addOverlay(TBInclayer, 'TB Rate');
+});
+
+// var TBInclayer;
+loadJSON("/cartotb/worldmap/regions/" + mapcode + "/hzones.geojson", function(response) {
+    var hzones_data = JSON.parse(response);
+    hzones_layer = new L.GeoJSON(hzones_data, {
+        style: function (feature) { return featStyle(feature, interactive=true) }
+    }).addTo(map);
+    hzones_layer.bindTooltip(function (layer) {
+        return "<b>" + layer.feature.properties.title + "</b><br>"
+    });
+    // hzones_layer.setZIndex(11);
+    control.addOverlay(hzones_layer, 'Health Zones');
 });
 
 // loadJSON(dataUrl + '/TBIncidenceAbs.json', function(response) {
