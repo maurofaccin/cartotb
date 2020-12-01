@@ -108,6 +108,21 @@
   </url>
   
   <url>
+    <loc>https://maurofaccin.github.io/cartotb/fr/region/cod_lualaba/</loc>
+    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/cod_lualaba/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/cod_lualaba/"
+                />
+  </url>
+  
+  <url>
     <loc>https://maurofaccin.github.io/cartotb/fr/region/cod_nkivu/</loc>
     <lastmod>2019-04-10T00:00:00+00:00</lastmod>
     <xhtml:link
