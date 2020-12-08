@@ -209,17 +209,18 @@ loadJSON("/cartotb/worldmap/regions/" + mapcode + "/hzones.geojson", function(re
 
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'legend'),
-                grades = [0.1, 0.32, 0.5, 1],
-                colors = ['#ffffcc', '#febf5a', '#f43d25', '#800026'];
+    var div = L.DomUtil.create('div', 'legend'),
+        grades = [0.1, 0.32, 0.5, 1],
+        colors = ['#ffffcc', '#febf5a', '#f43d25', '#800026'];
 
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-                div.innerHTML +=
-                        '<i style="background:' + colors[i] + '; opacity:1;"></i> >' + grades[i] + '%<br>';
-        }
+    // loop through our density intervals and generate a label with a colored square for each interval
+    div.innerHTML += '<b>INC RATE:</b><br>';
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + colors[i] + '; opacity:1;"></i>' + grades[i] + '%<br>';
+    }
 
-        return div;
+    return div;
 };
 
 legend.addTo(map);
