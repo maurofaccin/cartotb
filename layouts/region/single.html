@@ -14,7 +14,7 @@
 
     <header class="mt4 w-100">
         <p class="f6 b helvetica tracked">
-            {{ with .CurrentSection.Title }}{{ . | upper }}{{ end }}
+            <a href="{{ .CurrentSection.RelPermalink }}" class="link black dim">{{ i18n .Section }}</a>
         </p>
         <h1 class="f1 athelas mb1">
             {{- .Title -}}
@@ -35,7 +35,6 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
         <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
         <script type="text/javascript" src="/tbassets/map.js"></script>
-
         {{- .Content -}}
     </section>
 
