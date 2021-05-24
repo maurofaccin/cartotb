@@ -6,6 +6,7 @@ var map = L.map(
     }
 );  //.setView(center, 8);
 
+// get base map {positron}
 var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
@@ -21,6 +22,7 @@ var baseLayers = {
 };
 var control = L.control.layers(baseLayers, {}).addTo(map);
 
+// incidence layer
 inc_layer = L.vectorGrid.protobuf("/cartotb/worldmap/regions/" + mapcode + "/{z}/{x}/{y}.pbf", {
         vectorTileLayerStyles: {
                 incidence: function(properties, zoom){
@@ -37,6 +39,7 @@ inc_layer = L.vectorGrid.protobuf("/cartotb/worldmap/regions/" + mapcode + "/{z}
 }).addTo(map);
 inc_layer.setZIndex(20);
 
+// utility function to get and draw a geojson
 function loadJSON(url, callback) {
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -50,30 +53,7 @@ function loadJSON(url, callback) {
         xobj.send(null);
 }
 
-// loadJSON(dataUrl + '/missions.json', function(response) {
-//         var miss = JSON.parse(response);
-
-//         var rectangles = new L.FeatureGroup();
-//         for (var mname in miss){
-//                 var bounds = [[miss[mname]["bounds"][1], miss[mname]["bounds"][0]], [miss[mname]["bounds"][3], miss[mname]["bounds"][2]]];
-//                 L.imageOverlay(miss[mname]["pic"], bounds).addTo(map);
-//                 rec = new L.rectangle(bounds, {}).addTo(rectangles);
-//                 rec.on('click', function(e) {
-//                         map.setView(e.latlng,  13);
-//                 }
-//                 );
-//                 map.on('zoomend', function(e) {
-//                         if (map.getZoom() > 12){
-//                                 map.removeLayer(rectangles);
-//                         }
-//                         else {
-//                                 map.addLayer(rectangles);
-//                         }
-//                 });
-//         };
-//         map.addLayer(rectangles);
-// });
-
+// utility function to get the features styles
 function featStyle(feat, interactive=false) {
         return {
                 color: feat.properties.stroke,
@@ -95,12 +75,12 @@ loadJSON(dataUrl + '/TBIncidence.json', function(response) {
         control.addOverlay(TBInclayer, 'TB Rate');
 });
 
-// var TBInclayer;
+// draw the health zones
 loadJSON("/cartotb/worldmap/regions/" + mapcode + "/hzones.geojson", function(response) {
     var hzones_data = JSON.parse(response);
     hzones_layer = new L.GeoJSON(hzones_data, {
         style: function (feature) { return featStyle(feature, interactive=true) }
-    }).addTo(map);
+    });
     hzones_layer.bindTooltip(function (layer) {
         return "<b>" + layer.feature.properties.title + "</b><br>"
     });
@@ -108,104 +88,29 @@ loadJSON("/cartotb/worldmap/regions/" + mapcode + "/hzones.geojson", function(re
     control.addOverlay(hzones_layer, 'Health Zones');
 });
 
-// loadJSON(dataUrl + '/TBIncidenceAbs.json', function(response) {
-//         var TBIncidenceAbs = JSON.parse(response);
-//         TBInclayerAbs = new L.GeoJSON(TBIncidenceAbs, {
-//                 style: function (feature) { return featStyle(feature) }
-//         });
-//         TBInclayerAbs.setZIndex(9);
-//         control.addOverlay(TBInclayerAbs, 'TB Cases');
-// });
+// Add the satellite layer for cities
+L.tileLayer(
+    "/cartotb/worldmap/cities/" + mapcode + "/{z}/{x}/{y}.png",
+    {tms: true, opacity: 0.7, attribution: "", minZoom: 12.1, maxZoom: 17}
+).addTo(map);
 
-// loadJSON(dataUrl + '/hz.json', function(response) {
-//         var hz = JSON.parse(response);
-//         var HZlayer = new L.GeoJSON(hz, {
-//                 style: function (feature) { return featStyle(feature, true) }
-//         }).bindTooltip(function (layer) {
-//                 return "<b>" + layer.feature.properties.tbmap_name + "</b><br>" +
-//                         "Incidence rate: " + layer.feature.properties.tbmap_incidence
-//         });
-//         HZlayer.setZIndex(8);
-//         control.addOverlay(HZlayer, 'Health Zones');
-// });
-
-// loadJSON(dataUrl + '/screening.json', function(response) {
-//         var screening = JSON.parse(response);
-//         var screeningLayer = new L.GeoJSON(screening, {
-//                 pointToLayer: function (feature, latlng) {
-//                         var circ = L.circle(latlng, {
-//                                 radius: 2000,
-//                                 color: "blue",
-//                                 opacity: 0.8,
-//                                 weight: 1,
-//                                 fillColor: "blue",
-//                                 fillOpacity: 0.5
-//                         }).bindPopup(
-//                                 "<b>" + feature.properties.name + "</b><br>" +
-//                                 "<b>POP:</b>" + feature.properties.pop + "<br>" +
-//                                 "<b>TB:</b>" + feature.properties.tb + "<br>" +
-//                                 "<b>NNS:</b>" + feature.properties.nns
-//                         );
-//                         circ.on('mouseover', function (e) {this.openPopup();});
-//                         circ.on('mouseout', function (e) {this.closePopup();});
-//                         return circ;
-//                 }
-//         });
-//         screeningLayer.setZIndex(7);
-//         control.addOverlay(screeningLayer, 'Screening');
-// });
-
-// loadJSON(dataUrl + '/mines.json', function(response) {
-//         var mines = JSON.parse(response);
-//         var minesLayer = new L.GeoJSON(mines, {
-//                 pointToLayer: function (feature, latlng) {
-//                         return L.circle(latlng, {
-//                                 radius: feature.properties.radius * 100,
-//                                 color: "black",
-//                                 opacity: 0.5,
-//                                 weight: 1,
-//                                 fillColor: "black",
-//                                 fillOpacity: 0.3
-//                         });
-//                 }
-//         });
-//         minesLayer.setZIndex(6);
-//         control.addOverlay(minesLayer, 'Mines');
-// });
-
-// loadJSON(dataUrl + '/hfacs.json', function(response) {
-//         var hfacs = JSON.parse(response);
-//         var healthIcon = L.icon({
-//                 iconUrl: '../../../tbassets/health-icon.png',
-
-//                 iconSize:     [28, 40], // size of the icon
-//                 iconAnchor:   [14, 40], // point of the icon which will correspond to marker's location
-//                 popupAnchor:  [0, -46] // point from which the popup should open relative to the iconAnchor
-//         });
-//         var hfacsLayer = new L.GeoJSON(hfacs, {
-//                 pointToLayer: function (feature, latlng) {
-//                         return L.marker(latlng, {
-//                                 icon: healthIcon
-//                         }).bindPopup(
-//                                 "<b>" + feature.properties.name + "</b>"
-//                         );
-//                 }
-//         });
-//         hfacsLayer.setZIndex(5);
-//         control.addOverlay(hfacsLayer, 'Health Facilities');
-// });
-
-// map.on("overlayadd", function(eo) {
-//         if (eo.name === "TB Rate") {
-//                 setTimeout(function() {
-//                         map.removeLayer(TBInclayerAbs)
-//                 }, 10);
-//         } else if (eo.name === "TB Cases") {
-//                 setTimeout(function() {
-//                         map.removeLayer(TBInclayer)
-//                 }, 10);
-//         }
-// });
+// draw districts
+loadJSON("/cartotb/worldmap/cities/" + mapcode + "/adm.geojson", function(response) {
+    var adm_data = JSON.parse(response);
+    var adm_layer = new L.GeoJSON(adm_data, {
+        style: featStyle( { 'properties': {
+            'fill': '#888888',
+            'stroke': '#555555',
+            'fill-opacity': '0.5',
+            'stroke-opacity': '0.8',
+            'stroke-width': '2'
+        } }, interactive=true )
+    });
+    adm_layer.bindTooltip(function (layer) {
+        return "<b>" + layer.feature.properties.ADM3_EN + "</b><br>"
+    });
+    control.addOverlay(adm_layer, 'Administrative Borders');
+});
 
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {

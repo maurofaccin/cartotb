@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Regions on Carto TB</title>
+    <title>Régions on Carto TB</title>
     <link>https://maurofaccin.github.io/cartotb/fr/region/</link>
-    <description>Recent content in Regions on Carto TB</description>
+    <description>Recent content in Régions on Carto TB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2019 10:35:50 +0200</lastBuildDate><atom:link href="https://maurofaccin.github.io/cartotb/fr/region/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nord Kivu</title>
-      <link>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</link>
-      <pubDate>Thu, 11 Apr 2019 10:35:50 +0200</pubDate>
-      
-      <guid>https://maurofaccin.github.io/cartotb/fr/region/nkivu/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maurofaccin.github.io/cartotb/fr/region/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lualaba (DRC)</title>
       <link>https://maurofaccin.github.io/cartotb/fr/region/cod_lualaba/</link>
