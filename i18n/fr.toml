@@ -17,4 +17,5 @@ other = "Ce qui est dans {{ .Type }}"
 other = "Lié"
 
 [region]
+one = "Région"
 other = "Régions"
