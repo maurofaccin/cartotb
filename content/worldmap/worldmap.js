@@ -136,7 +136,7 @@ function draw_incidence(region, index) {
     var pbfLayer = L.vectorGrid.protobuf(openmaptilesUrl, vectorTileOptions).addTo(pbfGroup);
 
     // add the cities
-    var city = L.tileLayer("/cartotb/worldmap/cities/" + region + "/{z}/{x}/{y}.png", {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2 - 0.9, maxZoom: 17}).addTo(cities);
+    L.tileLayer("/cartotb/worldmap/cities/" + region + "/{z}/{x}/{y}.png", {tms: true, opacity: 0.7, attribution: "", minZoom: zoom2 - 0.9, maxZoom: 17}).addTo(cities);
 
     loadJSON("/cartotb/worldmap/cities/" + region + "/cities.geojson", function(response) {
         var bounds = JSON.parse(response);
