@@ -5,8 +5,6 @@ featured_image: '/images/default-feat-image.jpg'
 description: 'Cartographie des zones à très haut risque de tuberculose'
 ---
 
-*Il s'agit d'un travail en cours.*
-
 <div id="mapid" style="height: 40vh;"></div>
 <small><i>
 Cliquez sur la carte pour ouvrir une vue plus grande.

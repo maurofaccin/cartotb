@@ -4,8 +4,6 @@ featured_image: "/images/default-feat-image.jpg"
 description: 'Cartography of predicted tuberculosis in high burden settings'
 ---
 
-*This is a work in progress.*
-
 <div id="mapid" style="height: 40vh;"></div>
 <small><i>Click on the map to open a larger view.</i></small>
 
