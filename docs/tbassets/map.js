@@ -56,12 +56,12 @@ function loadJSON(url, callback) {
 // utility function to get the features styles
 function featStyle(feat, interactive=false) {
         return {
-                color: feat.properties.stroke,
-                fillOpacity: feat.properties["fill-opacity"],
-                fillColor: feat.properties.fill,
-                opacity: feat.properties["stroke-opacity"],
-                weight: feat.properties["stroke-width"],
-                interactive: interactive,
+                color: feat.properties.stroke || "#000000",
+                fillOpacity: feat.properties["fill-opacity"] || 0.2,
+                fillColor: feat.properties.fill || "#555555",
+                opacity: feat.properties["stroke-opacity"] || 0.5,
+                weight: feat.properties["stroke-width"] || 2,
+                interactive: interactive || false,
         };
 };
 
@@ -98,14 +98,8 @@ L.tileLayer(
 loadJSON("/cartotb/worldmap/cities/" + mapcode + "/adm.geojson", function(response) {
     var adm_data = JSON.parse(response);
     var adm_layer = new L.GeoJSON(adm_data, {
-        style: featStyle( { 'properties': {
-            'fill': '#888888',
-            'stroke': '#555555',
-            'fill-opacity': '0.5',
-            'stroke-opacity': '0.8',
-            'stroke-width': '2'
-        } }, interactive=true )
-    });
+        style: function (feature) { return featStyle(feature, interactive=true) }
+    }).addTo(map);
     adm_layer.bindTooltip(function (layer) {
         return "<b>" + layer.feature.properties.ADM3_EN + "</b><br>Dist: " + layer.feature.properties.ADM2_EN
     });
