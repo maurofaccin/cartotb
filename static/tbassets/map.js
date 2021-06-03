@@ -107,7 +107,7 @@ loadJSON("/cartotb/worldmap/cities/" + mapcode + "/adm.geojson", function(respon
         } }, interactive=true )
     });
     adm_layer.bindTooltip(function (layer) {
-        return "<b>" + layer.feature.properties.ADM3_EN + "</b><br>"
+        return "<b>" + layer.feature.properties.ADM3_EN + "</b><br>Dist: " + layer.feature.properties.ADM2_EN
     });
     control.addOverlay(adm_layer, 'Administrative Borders');
 });
