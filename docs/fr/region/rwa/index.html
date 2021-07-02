@@ -92,8 +92,17 @@
         <main class="pb7">
             
 <script>
-    var mapzoom =  9 ;
-    var mapcenter = ["-2","30"];
+    var loc_data = new Map()
+    loc_data.set("zoom", 8);
+    
+        loc_data.set("border_keys", {"adm2_en":"district","adm3_en":"Sector","adm4_en":"cell"});
+    
+        loc_data.set("borders", {"cell":"kigali_adm4.geojson","sector":"kigali_adm3.geojson"});
+    
+        loc_data.set("center", [-2,30]);
+    
+        loc_data.set("zoom",  9 );
+    
     var mapcode = "rwa";
 </script>
 

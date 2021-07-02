@@ -1,8 +1,8 @@
 var map = L.map(
     'mapid',
     {
-        zoom:mapzoom,
-        center:mapcenter,
+        zoom: loc_data.get("zoom"),
+        center: loc_data.get("center"),
     }
 );  //.setView(center, 8);
 
@@ -95,16 +95,33 @@ L.tileLayer(
 ).addTo(map);
 
 // draw districts
-loadJSON("/cartotb/worldmap/cities/" + mapcode + "/adm.geojson", function(response) {
-    var adm_data = JSON.parse(response);
-    var adm_layer = new L.GeoJSON(adm_data, {
-        style: function (feature) { return featStyle(feature, interactive=true) }
-    }).addTo(map);
-    adm_layer.bindTooltip(function (layer) {
-        return "<b>" + layer.feature.properties.ADM3_EN + "</b><br>Dist: " + layer.feature.properties.ADM2_EN
-    });
-    control.addOverlay(adm_layer, 'Administrative Borders');
-});
+
+function titlecase(text) {
+    return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase()
+}
+
+if (typeof loc_data.get("borders") !== 'undefined') {
+    var borders = loc_data.get("borders");
+    for (bkey of Object.keys(borders)) {
+        console.log(bkey, borders[bkey]);
+        loadJSON("/cartotb/worldmap/cities/" + mapcode + "/" + borders[bkey], function(response) {
+            var adm_data = JSON.parse(response);
+            var adm_layer = new L.GeoJSON(adm_data, {
+                style: function (feature) { return featStyle(feature, interactive=true) }
+            });
+            adm_layer.bindTooltip(function (layer) {
+                var text ="Sector: " + layer.feature.properties.ADM3_EN + "<br>Dist: " + layer.feature.properties.ADM2_EN
+                if (typeof layer.feature.properties.ADM4_EN !== "undefined")
+                    text = "Cell: " + layer.feature.properties.ADM4_EN + "</br>" + text
+                return text
+            });
+            if (typeof adm_data.features[0].properties.ADM4_EN !== "undefined" )
+                control.addOverlay(adm_layer, 'Cell borders');
+            else
+                control.addOverlay(adm_layer, 'Sector borders');
+        });
+    }
+}
 
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {

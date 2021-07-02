@@ -5,8 +5,11 @@
 
 {{ define "main" }}
 <script>
-    var mapzoom = {{ .Params.zoom | default 8 }};
-    var mapcenter = {{ .Params.center }};
+    var loc_data = new Map()
+    loc_data.set("zoom", 8);
+    {{ range $var,$value := .Params.data }}
+        loc_data.set({{ $var }}, {{ $value }});
+    {{ end }}
     var mapcode = {{ .File.TranslationBaseName }};
 </script>
 {{ $section := .Site.GetPage "section" .Section }}
