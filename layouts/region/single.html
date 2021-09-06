@@ -10,6 +10,9 @@
     {{ range $var,$value := .Params.data }}
         loc_data.set({{ $var }}, {{ $value }});
     {{ end }}
+    {{ with .Params.center }}
+        loc_data.set("center", [{{ delimit . ", " | safeJS }}]);
+    {{ end }}
     var mapcode = {{ .File.TranslationBaseName }};
 </script>
 {{ $section := .Site.GetPage "section" .Section }}
@@ -30,9 +33,6 @@
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-100">
         <div id="mapid" class='w-100 center' style="height: 90vh;"></div>
-        {{ with .Params.center }}
-        <script type="text/javascript"> var center = [{{ delimit . ", " | safeJS }}]; </script>
-        {{ end }}
 
         <!-- <script type="text/javascript" src="/tbassets/leaflet.js"></script> -->
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>

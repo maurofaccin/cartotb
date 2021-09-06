@@ -4,7 +4,7 @@ var map = L.map(
         zoom: loc_data.get("zoom"),
         center: loc_data.get("center"),
     }
-);  //.setView(center, 8);
+);
 
 // get base map {positron}
 var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -65,16 +65,6 @@ function featStyle(feat, interactive=false) {
         };
 };
 
-// var TBInclayer;
-loadJSON(dataUrl + '/TBIncidence.json', function(response) {
-        var TBIncidence = JSON.parse(response);
-        TBInclayer = new L.GeoJSON(TBIncidence, {
-                style: function (feature) { return featStyle(feature) }
-        }).addTo(map);
-        // TBInclayer.setZIndex(10);
-        control.addOverlay(TBInclayer, 'TB Rate');
-});
-
 // draw the health zones
 loadJSON("/cartotb/worldmap/regions/" + mapcode + "/hzones.geojson", function(response) {
     var hzones_data = JSON.parse(response);
@@ -95,7 +85,6 @@ L.tileLayer(
 ).addTo(map);
 
 // draw districts
-
 function titlecase(text) {
     return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase()
 }
@@ -158,4 +147,3 @@ map.on('zoom', function(e){
         div.innerHTML = ' Zoom: ' + map.getZoom();
 });
 position.addTo(map);
-
