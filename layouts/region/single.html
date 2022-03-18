@@ -10,9 +10,6 @@
     {{ range $var,$value := .Params.data }}
         loc_data.set({{ $var }}, {{ $value }});
     {{ end }}
-    {{ with .Params.center }}
-        loc_data.set("center", [{{ delimit . ", " | safeJS }}]);
-    {{ end }}
     var mapcode = {{ .File.TranslationBaseName }};
 </script>
 {{ $section := .Site.GetPage "section" .Section }}
