@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maurofaccin.github.io/cartotb/fr/region/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Cameroun</title>
+      <link>https://maurofaccin.github.io/cartotb/fr/region/cmr/</link>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://maurofaccin.github.io/cartotb/fr/region/cmr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lualaba (DRC)</title>
       <link>https://maurofaccin.github.io/cartotb/fr/region/cod_lualaba/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>

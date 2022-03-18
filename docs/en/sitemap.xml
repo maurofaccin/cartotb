@@ -4,6 +4,16 @@
   <url>
     <loc>https://maurofaccin.github.io/cartotb/en/region/cmr/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://maurofaccin.github.io/cartotb/fr/region/cmr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maurofaccin.github.io/cartotb/en/region/cmr/"
+                />
   </url><url>
     <loc>https://maurofaccin.github.io/cartotb/en/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
