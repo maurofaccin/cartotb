@@ -5,7 +5,7 @@
 "minzoom": "0",
 "maxzoom": "12",
 "center": "11.557617,3.820407,12",
-"bounds": "9.424000,1.658750,16.124510,12.438820",
+"bounds": "8.848720,1.658750,16.135560,12.784510",
 "type": "overlay",
 "format": "pbf",
 "generator": "tippecanoe v1.36.0",
