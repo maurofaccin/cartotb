@@ -6,13 +6,17 @@ featured_image: "/images/default-feat-image.jpg"
 toc: true
 ---
 
-*This is a work in progress.*
-
 The World Health Organization (WHO) estimates that a significant proportion of tuberculosis (TB) patients do not have access to diagnostic testing and treatment. This proportion of undiagnosed patients, which can account for more than half of tuberculosis cases in some parts of the world, contributes significantly to TB-related mortality and spread.
 
 For this reason, WHO recommends that active TB screening activities be carried out in high-risk populations. These populations are traditionally defined as those who have had close contact with a patient with active pulmonary tuberculosis. However, it has been shown in several studies that more than two-thirds of transmissions occur outside this family or professional setting. It is therefore necessary to develop innovative strategies to precisely target very high-risk populations.
 
 Researchers from UCLouvain and KU Leuven have developed an approach to better assist local actors (national programmes, non-governmental organisations, local community organisations). This approach consists in developing maps that accurately predict geographical areas where tuberculosis incidence is highest.
+
+A precise description of the mechanisms behind these maps can be found in:
+
+> **Data-driven identification of communities with high levels of tuberculosis infection in the Democratic Republic of Congo**<br>
+> *Mauro Faccin, Olivier Rusumba, Alfred Ushindi, Mireille Riziki, Tresor Habiragi, Fairouz Boutachkourt & Emmanuel André* <br>
+> [Scientific Reports](https://doi.org/10.1038/s41598-022-07633-2), **12**, 3912 (2022)
 
 ## How are these maps constructed?
 
@@ -36,19 +40,19 @@ This tool therefore makes it possible to precisely target the places that should
 
 ## My country or province is not yet mapped
 
-We are looking for partners around the world who would like to collaborate on the scientific validation of our approach. During the period 2019-2020, we invite any official body (national tuberculosis programme or provincial tuberculosis coordination) wishing to collaborate in this direction to contact us in order to produce a map of the areas concerned and validate the data generated.
+We are looking for partners around the world who would like to collaborate on the scientific validation of our approach. During the period 2019-2020, we invite any official body (national tuberculosis program or provincial tuberculosis coordination) wishing to collaborate in this direction to contact us in order to produce a map of the areas concerned and validate the data generated.
 
-For any use of these maps outside this specific framework (calls for projects, activity reports, scientific communications), we ask you to make specific reference to this website as follows: *Faccin M. and André E. Cartography of predicted tuberculosis hotspots in high burden settings. Available at: [https://maurofaccin.github.io/tb_map](https://maurofaccin.github.io/tb_map)*
+For any use of these maps outside this specific framework (calls for projects, activity reports, scientific communications), we ask you to make specific reference to this website as follows: *Faccin M. and André E. Cartography of predicted tuberculosis hotspots in high burden settings. Available at: [https://maurofaccin.github.io/cartotb](https://maurofaccin.github.io/cartotb)*
 
 ## Limitations and evolution of the maps
 
 The purpose of these maps is to predict the location of areas with a high incidence of tuberculosis higher than the national average. In countries with high tuberculosis incidence, tuberculosis affects each area, and effective disease control requires strengthening and supporting disease control activities, including in areas with lower predicted incidence. In some cases, it is possible that areas at high risk of TB may not be listed as red areas. This may be related to a low historical screening rate in these specific areas. It is therefore important that these maps be used as a guiding tool, but that TB program managers remain vigilant about the possibility that some high-risk populations may exist or emerge undetected by these maps.
 
-The epidemiology of tuberculosis is set to evolve, thanks in part to the implementation of programmes to improve the quality of screening and management of high-risk populations. Therefore, the annual updating of these maps is necessary to regularly reassess the impact of these activities and the possible emergence of new priority areas.
+The epidemiology of tuberculosis is set to evolve, thanks in part to the implementation of programs to improve the quality of screening and management of high-risk populations. Therefore, the annual updating of these maps is necessary to regularly reassess the impact of these activities and the possible emergence of new priority areas.
 
 Contact with researchers:
 
-- Dr [Mauro Faccin](mailto:mauro.faccin@uclouvain.be)
+- Dr [Mauro Faccin](mailto:mauro.fccn@gmail.com)
 - Dr [Emmanuel André](mailto:emmanuel.andre@uzleuven.be)
 
 ## A collaboration between:
